@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"
+    integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
+    crossorigin="anonymous" />
+    
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+</head>
+
+<body>
+    <div class="navbar navbar-expand-lg  navbar-dark bg-dark">
+        <div class="container">
+          <a href="#" class="navbar-brand font-weight-bold">Weather App <span style="color: rgb(39, 117, 161);"></span> </a>
+          <a href="{% url 'home' %}" class="navbar-brand">Home <span style="color: rgb(39, 117, 161);"></span></a>
+          <a href="{% url 'city' %}" class="navbar-brand">Quick Access <span style="color: rgb(39, 117, 161);"></span></a>
+          <a href="{% url 'contact' %}" class="navbar-brand">Contact Us <span style="color: rgb(39, 117, 161);"></span></a>
+
+          <a href="{% url 'profile' %}" class="navbar-brand">MyProfile <span style="color: rgb(39, 117, 161);"></span></a>
+          <a href="{% url 'logout' %}" class="navbar-brand">Logout <span style="color: rgb(39, 117, 161);"></span></a>
+        </div>
+    </div>
+        {% block content %}
+        {% endblock content %}
+
+       
+    
+    <footer class="bg-dark" style="color: rgb(39, 117, 161);">
+        <div class="py-2 text-white text-center font-weight-bold">
+            <div class="text-center">
+                <a href="#" target="_blank"><i class="fab fa-twitter fa-2x i-color me-3"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f fa-2x i-color me-3"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram fa-2x i-color me-3"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble fa-2x i-color me-3"></i></a>
+            </div>
+            Copyright &copy Ashutosh - 2022
+        </div>
+    </footer>
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/all.min.js' %}"></script>
+
+</body>
+
+</html>

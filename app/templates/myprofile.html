@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .profile-pic{
+        max-width: 400px;
+        max-height:300px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="container">
+        
+        <div class="card card-body">
+            <h3 style="text-align: center" class="text-center">My Profile</h3>
+            <hr>
+            {% if fm %}
+            <img class="profile-pic" src="{{fm.profile_pic.url}}" >
+            <hr>
+            <div class="col-md-6 mx-auto">
+            <h4 class="text-dark">Name: {{fm.name}}</h4>
+            <h4 class="text-dark">Email: {{fm.email}}</h4>
+            <h4 class="text-dark">Phone: {{fm.phone}}</h4>
+            <h4 class="text-dark">Address: {{fm.address}}</h4>
+            <h4 class="text-dark">Date:{{fm.date_created}}</h4>
+            
+            </div>
+        {% else %}
+        <h4 class="text-dark">Please Update details</h4>
+        {% endif %}
+        
+        <button class="btn btn-outline-dark btn-md px-5 col-md-6 my-4 mx-auto "><a href="{% url 'prof' %}" class="nav-link">Update Profile</a></button>
+        </div>
+        
+    </div>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock content %}

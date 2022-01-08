@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5" class="bg-dark" style="color: rgb(39, 117, 161);">
+ <h1 class="text-warning mb-5 border-bottom">CONTACT US</h1>
+ <div class="row  mb-5">
+  <p class="mx-auto mb-5">
+   Do you have any questions? Please do not hesitate to contact. I will come back to you within a matter of hours to help you.
+  </p>
+
+
+  <div class="col-sm-9 mb-5">
+   <form action="" method="POST">
+     {% csrf_token %}
+    <div class="row">
+      <div class="form-group col-md-6">
+       <label for="inputName">Your Name</label>
+       {% comment %} <input type="text" class="form-control" id="inputName" />  {% endcomment %}
+       {{ form.name }}
+      </div>
+      <div class="form-group col-md-6">
+       <label for="inputEmail">Your Email</label>
+       {% comment %} <input type="email" class="form-control" id="inputEmail" required/> {% endcomment %}
+       {{ form.email }}
+      </div>
+     </div>
+     <div class="form-group">
+      <label for="inputSubject">Your Subject</label>
+      {% comment %} <input type="text" class="form-control" id="inputSubject" /> {% endcomment %}
+      {{form.subject}}
+     </div>
+     <div class="mb-3">
+      <label for="inputTextarea">Your message</label>
+      {% comment %} <textarea class="form-control" id="inputTextarea" ></textarea> {% endcomment %}
+      {{form.message}}
+     </div>
+     <input class="btn btn-outline-dark btn-md px-5 col-md-12" type="submit" value="Submit">
+   </form>
+  </div>
+
+  
+  <div class="col-sm-3 text-center">
+   <ul class="list-unstyled">
+    <li>
+     <i class="fas fa-map-marker-alt fa-3x i-color"></i>
+     <p>Patna, Bihar, India</p>
+    </li>
+    <li>
+     <i class="fas fa-phone mt-4 fa-3x i-color"></i>
+     <p>+91 7992302009</p>
+    </li>
+    <li>
+     <i class="fas fa-envelope mt-4 fa-3x i-color"></i>
+     <p>ashutoshsingh11019@gmnail.com</p>
+    </li>
+   </ul>
+  </div>
+ </div>
+</div>
+
+{% endblock content %}
